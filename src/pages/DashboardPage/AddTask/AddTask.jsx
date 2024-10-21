@@ -24,7 +24,8 @@ export default function AddTask({onTaskAdded}) {
       console.log(obj);
       const response = await fetchWithAuth(API_ENDPOINTS.addTask, obj)
       console.log(response);
-      onTaskAdded(response.data.taskId); // Notify parent component about the new task
+      // onTaskAdded(response.data.taskId); // Notify parent component about the new task
+      onTaskAdded();
       clearForm();
     } catch (error) {
       console.error('Error adding task:', error);

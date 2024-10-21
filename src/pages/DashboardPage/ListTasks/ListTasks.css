@@ -1,9 +1,10 @@
 .task {
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 5px;
     transition: transform 0.3s ease;
+    width: 50%;
 }
 
 .task:hover {
@@ -28,4 +29,12 @@
 .fade-exit-active {
     opacity: 0;
     transition: opacity 500ms;
+}
+
+@media (max-width: 600px) {
+    .task {
+        margin: 10px auto;
+        padding: 15px;
+        width: 80%;
+    }
 }
