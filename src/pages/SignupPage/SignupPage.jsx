@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import InputField from '../../components/InputField/InputField';
 import { Link } from 'react-router-dom';
 import './SignupPage.css'
+import { registerUser } from '../../utils/services/api';
 
 export default function SignupPage() {
     const [formData, setFormData] = useState({
@@ -43,10 +44,6 @@ export default function SignupPage() {
             }
         }
 
-        if (step === 2 && !formData.otp) {
-            newErrors.otp = 'OTP is required';
-        }
-
         setErrors(newErrors);
         console.log("Reached here", console.log(newErrors), Object.keys(newErrors).length)
         return Object.keys(newErrors).length === 0;
@@ -59,6 +56,7 @@ export default function SignupPage() {
             console.log("Reached here")
             if (step === 1) {
                 // Make API call to register and send OTP here
+                registerUser(formData);
             } else if (step === 2) {
                 // Verify OTP API call
             }

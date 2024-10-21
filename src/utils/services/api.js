@@ -14,6 +14,18 @@ export const loginUser = async (credentials) => {
     return data;
 };
 
+export const registerUser = async (credentials) => {
+    const response = await fetch(API_ENDPOINTS.register, {
+        method: 'POST',
+        body: JSON.stringify(credentials),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    const data = await response.json();
+    return data;
+};
+
 export const logoutUser = () => {
     removeID();
     window.location.href = '/login';  // Redirect to home page or login

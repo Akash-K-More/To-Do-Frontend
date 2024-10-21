@@ -42,8 +42,8 @@ export default function LoginPage() {
         // Make API call to login here
         try {
           const data = await loginUser(formData);
-          if (data.userID) {
-            setID(data.userID);  // Save access token
+          if (data.userId) {
+            setID(data.userId);  // Save access token
             navigate('/dashboard');
           }
         } catch (error) {
