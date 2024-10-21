@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3001/api'; // Replace with your API base URL
+const API_BASE_URL = 'https://to-do-backend-mi1j.onrender.com/api'; // Replace with your API base URL
 
 const API_ENDPOINTS = {
     register: `${API_BASE_URL}/auth/register`,
